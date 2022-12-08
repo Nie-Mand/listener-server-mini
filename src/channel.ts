@@ -5,6 +5,8 @@ export function createChannel() {
   const channel = new PubSub()
 
   function emit(data: Data) {
+    console.log('here Z')
+
     channel.publish(JSON.stringify(data))
   }
 

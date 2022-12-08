@@ -11,6 +11,8 @@ export function run() {
     const urlChunks = _req.url.split('/')
     const baseUrl = urlChunks[urlChunks.length - 1]
 
+    console.log('baseUrl', baseUrl)
+
     if (baseUrl === 'agent') {
       try {
         const body: Data = await _req.json()
@@ -19,7 +21,9 @@ export function run() {
             status: 400,
           })
 
+        console.log('here X')
         emit(body)
+        console.log('here Y')
         return new Response('ok')
       } catch (e) {
         console.log('YYYY-error:', e)
