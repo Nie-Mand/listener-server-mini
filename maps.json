@@ -1,0 +1,10 @@
+{
+    "imports": {
+        "./": "./",
+        "@/": "./src/",
+        "ws": "https://deno.land/x/websocket@v0.1.4/mod.ts",
+        "http": "https://deno.land/std@0.144.0/http/mod.ts",
+        "load-dotenv": "https://deno.land/x/dotenv/load.ts"
+    }
+  }
+  
