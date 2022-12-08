@@ -1,5 +1,5 @@
 dev:
-    @deno run --allow-all --watch --import-map=maps.json src/index.ts
+    @deno run --allow-all --watch src/index.ts
 
 build:
     # handle build job

@@ -1,30 +1,43 @@
 {
-    "compilerOptions": {
-      "strictPropertyInitialization": false,
-      "allowJs": true,
-      "lib": ["deno.window"],
-      "strict": true
+  "importMap": "./maps.json",
+  "compilerOptions": {
+    "strictPropertyInitialization": false,
+    "allowJs": true,
+    "lib": [
+      "deno.window"
+    ],
+    "strict": true
+  },
+  "lint": {
+    "files": {
+      "include": [
+        "src/"
+      ]
     },
-    "lint": {
-      "files": {
-        "include": ["src/"]
-      },
-      "rules": {
-        "tags": ["recommended"],
-        "include": ["ban-untagged-todo"],
-        "exclude": ["no-unused-vars"]
-      }
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "include": [
+        "ban-untagged-todo"
+      ],
+      "exclude": [
+        "no-unused-vars"
+      ]
+    }
+  },
+  "fmt": {
+    "files": {
+      "include": [
+        "src/"
+      ]
     },
-    "fmt": {
-      "files": {
-        "include": ["src/"]
-      },
-      "options": {
-        "useTabs": true,
-        "lineWidth": 80,
-        "indentWidth": 4,
-        "singleQuote": true,
-        "proseWrap": "preserve"
-      }
+    "options": {
+      "useTabs": true,
+      "lineWidth": 80,
+      "indentWidth": 4,
+      "singleQuote": true,
+      "proseWrap": "preserve"
     }
   }
+}
