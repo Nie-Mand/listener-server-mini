@@ -37,15 +37,11 @@ export function run() {
         onEvent(data => {
           socket.send(JSON.stringify(data))
         })
-        socket.onmessage = e => {
-          console.log('socket message:', e.data)
-          socket.send(new Date().toString())
-        }
         socket.onerror = e => console.log('socket errored:', e)
         socket.onclose = () => console.log('bye')
         return response
       } catch (e) {
-        console.log('error:', e)
+        console.log('XXX-error:', e)
         return new Response(null, {
           status: 606,
           statusText: 'Oops',
