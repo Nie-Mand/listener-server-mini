@@ -21,9 +21,7 @@ export function run() {
             status: 400,
           })
 
-        console.log('here X')
         emit(body)
-        console.log('here Y')
         return new Response('ok')
       } catch (e) {
         console.log('YYYY-error:', e)
@@ -37,10 +35,12 @@ export function run() {
     if (baseUrl === 'listen') {
       try {
         const { response, socket } = Deno.upgradeWebSocket(_req)
-        socket.onopen = () => console.log('hi')
-        onEvent(data => {
-          socket.send(JSON.stringify(data))
-        })
+        socket.onopen = () => {
+          console.log('hi')
+          onEvent(data => {
+            socket.send(JSON.stringify(data))
+          })
+        }
         socket.onerror = e => console.log('socket errored:', e)
         socket.onclose = () => console.log('bye')
         return response
