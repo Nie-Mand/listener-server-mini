@@ -14,7 +14,7 @@ export function run() {
     if (baseUrl === 'agent') {
       try {
         const body: Data = await _req.json()
-        if (!body.task || !body.task)
+        if (!body.team || !body.chall)
           return new Response(null, {
             status: 400,
           })
