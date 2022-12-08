@@ -22,7 +22,7 @@ export function run() {
         emit(body)
         return new Response('ok')
       } catch (e) {
-        console.log('error:', e)
+        console.log('YYYY-error:', e)
 
         return new Response(null, {
           status: 400,
