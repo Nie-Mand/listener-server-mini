@@ -21,7 +21,9 @@ export function run() {
 
         emit(body)
         return new Response('ok')
-      } catch {
+      } catch (e) {
+        console.log('error:', e)
+
         return new Response(null, {
           status: 400,
         })
@@ -42,7 +44,8 @@ export function run() {
         socket.onerror = e => console.log('socket errored:', e)
         socket.onclose = () => console.log('bye')
         return response
-      } catch {
+      } catch (e) {
+        console.log('error:', e)
         return new Response(null, {
           status: 606,
           statusText: 'Oops',
