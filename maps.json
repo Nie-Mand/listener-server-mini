@@ -4,7 +4,8 @@
         "@/": "./src/",
         "http": "https://deno.land/std@0.144.0/http/server.ts",
         "load-dotenv": "https://deno.land/x/dotenv@v3.1.0/load.ts",
-        "pubsub": "https://deno.land/x/pubsub@0.0.5/mod.ts"
+        "pubsub": "https://deno.land/x/pubsub@0.0.5/mod.ts",
+        "events": "https://deno.land/x/events@v1.0.0/mod.ts"
     }
   }
   
