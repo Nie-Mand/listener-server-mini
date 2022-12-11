@@ -5,7 +5,7 @@ export function createChannel() {
   const channel = new EventEmitter()
 
   function emit(data: Data) {
-    console.log('here Z')
+    console.log('I got: ', data)
 
     channel.emit('event', JSON.stringify(data))
   }
