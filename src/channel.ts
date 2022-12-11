@@ -12,6 +12,8 @@ export function createChannel() {
 
   function onEvent(cb: (data: Data) => void) {
     channel.on('event', (msg: string) => {
+      console.log('I got: ', msg)
+
       const data = JSON.parse(msg.toString())
       cb(data)
     })

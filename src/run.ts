@@ -47,6 +47,7 @@ export function run() {
               console.log('socket is not open')
               return
             }
+            console.log('sending data')
             socket.send(JSON.stringify(data))
           })
         }
