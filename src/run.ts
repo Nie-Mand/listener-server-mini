@@ -8,6 +8,8 @@ export function run() {
   const { onEvent, emit } = createChannel()
 
   async function handler(_req: Request): Promise<Response> {
+    console.log('headers.upgrade', _req.headers.get('upgrade'))
+
     const urlChunks = _req.url.split('/')
     const baseUrl = urlChunks[urlChunks.length - 1]
 
@@ -32,7 +34,6 @@ export function run() {
 
     if (baseUrl === 'listen') {
       try {
-        console.log('headers', _req.headers)
         console.log('headers.upgrade', _req.headers.get('upgrade'))
 
         if (_req.headers.get('upgrade') != 'websocket') {
