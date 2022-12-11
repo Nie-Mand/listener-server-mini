@@ -32,6 +32,12 @@ export function run() {
 
     if (baseUrl === 'listen') {
       try {
+        console.log('headers', _req.headers)
+        console.log('headers.upgrade', _req.headers.get('upgrade'))
+
+        if (_req.headers.get('upgrade') != 'websocket') {
+          return new Response(null, { status: 501 })
+        }
         const { response, socket } = Deno.upgradeWebSocket(_req)
         socket.onopen = () => {
           console.log('hi')
