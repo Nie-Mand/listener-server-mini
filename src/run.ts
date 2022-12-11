@@ -11,8 +11,6 @@ export function run() {
     const urlChunks = _req.url.split('/')
     const baseUrl = urlChunks[urlChunks.length - 1]
 
-    console.log('baseUrl', baseUrl)
-
     if (baseUrl === 'agent') {
       try {
         const body: Data = await _req.json()
@@ -38,6 +36,7 @@ export function run() {
         socket.onopen = () => {
           console.log('hi')
           onEvent(data => {
+            if (socket.readyState !== WebSocket.OPEN) return
             socket.send(JSON.stringify(data))
           })
         }

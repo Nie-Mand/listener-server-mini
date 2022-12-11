@@ -1,4 +1,3 @@
-import { PubSub } from 'pubsub'
 import { Data } from './types.ts'
 import EventEmitter from 'events'
 
