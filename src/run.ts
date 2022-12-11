@@ -43,7 +43,10 @@ export function run() {
         socket.onopen = () => {
           console.log('hi')
           onEvent(data => {
-            if (socket.readyState !== WebSocket.OPEN) return
+            if (socket.readyState !== WebSocket.OPEN) {
+              console.log('socket is not open')
+              return
+            }
             socket.send(JSON.stringify(data))
           })
         }
@@ -53,7 +56,7 @@ export function run() {
       } catch (e) {
         console.log('XXX-error:', e)
         return new Response(null, {
-          status: 606,
+          status: 500,
           statusText: 'Oops',
         })
       }
